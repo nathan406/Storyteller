@@ -7,19 +7,20 @@
 </head>
 <body>
     <link rel="stylesheet" href="index.css">
+	<span id="dummy"></span>
+	<button> <a href="#" onclick="playSound('Audio/stellaradventures.mp3');">Play</a> </button>
+	<style>
+		button{
+			background-color: rgb(128, 128, 240);
+			border: none;
+			padding: 1rem;
+			color: white;
+			border-radius: 1rem;
+		}
+	</style>
 <div class="scene">
-    <audio id="openingSound" autoplay  >
-        <source src="Audio/stellaradventures.mp3" type="audio/wav">
-        <!-- Add additional source elements for different audio formats if needed -->
-        Your browser does not support the audio element.
-    </audio>
-    
-      <script>
-        window.onload = function() {
-          var openingSound = document.getElementById('openingSound');
-          openingSound.play();
-        };
-      </script>
+	
+		
 	<div class="person">
 		<div class="person__rightarm"></div>
 		<div class="person__body">
@@ -53,6 +54,15 @@
 		<div class="person__lefttarm"></div>
 		<div class="person__helmet"></div>
 	</div>
+
+
+	<script>
+		function playSound(soundfile) {
+  document.getElementById("dummy").innerHTML=
+    "<embed src=\""+soundfile+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
+}
+    </script>
+	
 </div>
 </body>
 </html>
